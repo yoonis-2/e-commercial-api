@@ -20,7 +20,7 @@ function Header(){
             <Link    onClick={handleclosed} to="/contact"><li className="py-3 md:py-0">Contact-Us</li></Link>
         </ul>
         <div>
-           <Link to="/cart"><i class="fa-solid fa-cart-shopping text-2xl "><span className="absolute top-0">(0)</span></i></Link>
+           <Link onClick={handleclosed} to="/cart"><i class="fa-solid fa-cart-shopping text-2xl "><span className="absolute top-0">(0)</span></i></Link>
         </div>
         <i style={{display: isopen === true ? "none" : ""}} onClick={handleOpen} className="fa-solid fa-bars text-3xl md:hidden -mt-1"></i>
         <i style={{display: isopen === true ? "block" : "none"}} onClick={handleclosed} className="fa-solid fa-x text-3xl md:hidden -mt-2 "></i>
