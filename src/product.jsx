@@ -1,5 +1,15 @@
+import { useDispatch } from "react-redux"
+import { increment } from "./redux/reducer/cart"
+
 
 function Product(props){
+
+    const dispatch = useDispatch()
+
+    const handleDispatch = () => {
+        dispatch(increment())
+    }
+    
     return <div>
         <div className="border-2 border-[#283739] w-64 h-72 mb-10">
             <img className="w-32 h-32 ml-5 mt-5" src={props.image} alt="" />
@@ -7,7 +17,7 @@ function Product(props){
                 <h3 className="text-[10px] mt-2 font-bold">{props.name}</h3>
                 <h3 className="font-bold ">${props.price}</h3>
             </div>
-            <button className="bg-[#283739] px-8 py-2 text-white ml-10 mt-3">Add to Cart</button>
+            <button onClick={handleDispatch} className="bg-[#283739] px-8 py-2 text-white ml-10 mt-3">Add to Cart</button>
         </div>
 
     </div>

@@ -3,9 +3,12 @@ import Product from "../product"
 import image from "/Airport.jpg"
 import imges from "/isolated-white-t-shirt-front-view_125540-1194.avif"
 import axios from "axios"
+import { useSelector } from "react-redux"
+
 
 
 function Home(){
+    
     const [Data, setData] = useState([])
     const handleReadData = () => {
         axios.get("https://fakestoreapi.com/products").then((response) => {
@@ -16,6 +19,8 @@ function Home(){
     useEffect(() => {
         handleReadData()
     },[])
+
+    const cart = useSelector((e) => e.newsCart. count)
     return <div>
         <div className="flex flex-col md:flex md:flex-row  justify-evenly md:pt-[13%] pt-[25%] ml-8 md:ml-0">
             {/* left */}
@@ -32,7 +37,7 @@ function Home(){
        {/* product-section */}
        <div className="md:grid md:grid-cols-3 grid grid-cols-1 md:ml-16  ml-16 md:mt-[3%] mt-[20%] md:mb-[5%] mb-[16%]">
         {
-            Data.slice(0,6).map((item) => 
+            Data.slice(6,12).map((item) => 
                  <Product image={item.image} name={item.title} price={item.price}/>
             )}
        </div>

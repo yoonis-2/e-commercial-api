@@ -9,6 +9,7 @@ import Contact from "./pages/contact"
 import Cart from "./pages/cart"
 
 function App(){
+
   return <div>
    <Header/>
    <Routes>
